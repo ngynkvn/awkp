@@ -19,14 +19,17 @@ var (
 
 const DEFAULT_TEXT = "Enter an awk expression to get a preview of the results."
 
+/* Oh dear, global variables.. */
 var previewer = tview.NewTextView().SetText(DEFAULT_TEXT)
 var app = tview.NewApplication()
+
 var setPreview = func(text string) {
 	app.QueueUpdateDraw(func() {
 		previewer.SetText(text)
 	})
 }
 
+/// Run awk as a subprocess and collect the text to be shown by the previewer.
 func execAwk(text string) {
 	if len(text) == 0 {
 		setPreview(DEFAULT_TEXT)
@@ -53,6 +56,9 @@ func execAwk(text string) {
 
 var dots = []string{".", "..", "..."}
 
+/* Some simple feedback so that you don't have to wonder
+ * if your program just froze.
+ */
 func start_dots(ticker *time.Ticker) {
 	i := 0
 	for range ticker.C {
@@ -64,6 +70,12 @@ func start_dots(ticker *time.Ticker) {
 	}
 }
 
+/*
+ *  Debounces the callback for sending the command text
+ *  to awk so we don't potentially overwhelm the system
+ *
+ *  It's a bit hacky.
+ */
 func debounced(callback func(text string)) func(text string) {
 	var handle *time.Timer
 	ticker := time.NewTicker(time.Millisecond * 200)
@@ -82,6 +94,9 @@ func debounced(callback func(text string)) func(text string) {
 	}
 }
 
+/*
+ * Sets up the inputline, preview, and a debug console, and runs the UI.
+ */
 func main() {
 	kingpin.Parse()
 
@@ -99,8 +114,8 @@ func main() {
 	appMain.Box.SetBorder(true).SetTitle("Awk Preview")
 	appMain.
 		AddItem(readline, 3, 1, true).
-		AddItem(previewer, 0, 1, false).
-		AddItem(logOutput, 10, 1, false)
+		AddItem(previewer, 0, 5, false).
+		AddItem(logOutput, 0, 1, false)
 
 	if err := app.SetRoot(appMain, true).SetFocus(appMain).Run(); err != nil {
 		panic(err)

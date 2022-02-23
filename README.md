@@ -45,8 +45,9 @@ these:
 
 - _Go_, the language and library this tool was written in,
   https://github.com/rivo/tview
+  - This one has come to my attention recently: https://github.com/charmbracelet/bubbletea
 - _Rust_, https://github.com/fdehau/tui-rs
-- _Python_, (doesn't support Windows! But I'm planning on trying to fix this.),
+- _Python_,
   https://github.com/willmcgugan/textual
 
 # Nice to haves

@@ -36,9 +36,6 @@ quickly iterate on until I get the appropriate output.
 TUI's are just quicker to pull up than an online playground, and awk was a
 simple target for experimenting ideas with how people interact with computers.
 
-In my opinion, libraries for building TUI's across programming languages are
-becoming really good. I hope that these style of tools can become more
-prevalent.
 
 If you're interested in some cool TUI libraries, I recommend checking some of
 these:
@@ -60,7 +57,7 @@ Some extensions I think would be nice to have:
 - Descriptions for the different flags that awk supports, and interative buttons
   / fields for setting them.
 
-# Awesome Dependencies
+# Dependencies
 
 - https://github.com/rivo/tview
 - https://github.com/kballard/go-shellquote

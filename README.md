@@ -22,8 +22,6 @@ You should have `awk` in your path already for this to work correctly.
 go install github.com/ngynkvn/awkp@latest
 ```
 
-Should work, let me know if it doesn't.
-
 # Motivation
 
 There's a lot of friction for new users when learning command line tools like

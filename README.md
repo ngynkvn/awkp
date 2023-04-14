@@ -27,9 +27,9 @@ go install github.com/ngynkvn/awkp@latest
 There's a lot of friction for new users when learning command line tools like
 awk, sed, and grep.
 
-Having a quick feedback loop is really, really useful for anyone that's looking
-to quickly test out new ideas or concepts, and `awk` is one of those commands I
-quickly iterate on until I get the appropriate output.
+The motivation was to see how a quick feedback loop could potentially be useful for iteratively building out a command.
+
+`awk` is one of those commands I quickly iterate on until I get the appropriate output.
 
 TUI's are just quicker to pull up than an online playground, and awk was a
 simple target for experimenting ideas with how people interact with computers.

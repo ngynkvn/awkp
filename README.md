@@ -2,7 +2,7 @@
 
 A proof of concept for live previewing output of an awk command.
 
-The application is only about 100 lines of straightforward code.
+The application is only about 100 lines of code.
 
 [![asciicast](https://asciinema.org/a/439432.svg)](https://asciinema.org/a/439432)
 
